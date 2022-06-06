@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['plugin_56',['plugIn',['../classAdapterUSA.html#a647487ae7c3870a27196fa4a95c1bc30',1,'AdapterUSA::plugIn()'],['../classAdapterMeksyk.html#aec299df69c657192f34d5f62bf34e133',1,'AdapterMeksyk::plugIn()'],['../classAdapterKoreaPld.html#a550530f7300c3daead7c70b9b6339c52',1,'AdapterKoreaPld::plugIn()'],['../classAdapterTaiwan.html#a0d2d3fba7b8798e5111029a7341e4bb4',1,'AdapterTaiwan::plugIn()'],['../classElectricDeviceUSA.html#ab665f1f8d608d9c22a8a06dfd971e14e',1,'ElectricDeviceUSA::plugIn()'],['../classElectricDeviceMeksyk.html#ad01a177aa69a035fd1d003e1a1e3f846',1,'ElectricDeviceMeksyk::plugIn()'],['../classElectricDeviceKoreaPld.html#a8ba62f9c4f1fd669b321d4ddb6cfea56',1,'ElectricDeviceKoreaPld::plugIn()'],['../classElectricDeviceTaiwan.html#aba4dc087296ceda654fa01d2dcc9165a',1,'ElectricDeviceTaiwan::plugIn()']]]
+];

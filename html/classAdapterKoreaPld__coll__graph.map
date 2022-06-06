@@ -1,0 +1,5 @@
+<map id="AdapterKoreaPld" name="AdapterKoreaPld">
+<area shape="rect" id="node1" title="Klasa: Adapter Europa &#45;&gt; KoreaPld koprzystająca z klasy: Docelowy Standard KoreaPld." alt="" coords="129,95,259,121"/>
+<area shape="rect" id="node2" href="$classKoreaPldSocketInterface.html" title="Klasa: Gniazdo Korea Poludniowa (220V)" alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node3" href="$classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="210,5,378,32"/>
+</map>
