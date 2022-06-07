@@ -1,5 +1,5 @@
 <map id="AdapterUSA" name="AdapterUSA">
 <area shape="rect" id="node1" title="Klasa: Adapter Europa &#45;&gt; USA koprzystająca z klasy: Docelowy Standard USA." alt="" coords="122,95,223,121"/>
 <area shape="rect" id="node2" href="$classUSASocketInterface.html" title="Klasa: Gniazdo USA (120V)" alt="" coords="5,5,156,32"/>
-<area shape="rect" id="node3" href="$classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="181,5,349,32"/>
+<area shape="rect" id="node3" href="$classEuropaSocketInterface.html" title="Klasa: Gniazdo Europa." alt="" coords="181,5,349,32"/>
 </map>

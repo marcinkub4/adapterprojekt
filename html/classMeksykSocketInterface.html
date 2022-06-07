@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classMeksykSocketInterface.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -73,28 +93,27 @@ $(function() {
 
 <p>Klasa: Gniazdo Meksyk (127V)  
  <a href="classMeksykSocketInterface.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for MeksykSocketInterface:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for MeksykSocketInterface:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classMeksykSocketInterface__inherit__graph.png" border="0" usemap="#aMeksykSocketInterface_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMeksykSocketInterface_inherit__map" id="aMeksykSocketInterface_inherit__map">
 <area shape="rect" title="Klasa: Gniazdo Meksyk (127V)" alt="" coords="5,5,180,32"/>
 <area shape="rect" href="classAdapterMeksyk.html" title="Klasa: Adapter Europa &#45;&gt; Meksyk koprzystająca z klasy: Docelowy Standard Meksyk." alt="" coords="31,80,155,107"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7971cc8d57adfccdc72f391322e463d7"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeksykSocketInterface.html#a7971cc8d57adfccdc72f391322e463d7">voltage</a> ()=0</td></tr>
 <tr class="separator:a7971cc8d57adfccdc72f391322e463d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dd47f1e6a5bba3f02499e976fb981a1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeksykSocketInterface.html#a0dd47f1e6a5bba3f02499e976fb981a1">live</a> ()=0</td></tr>
-<tr class="memdesc:a0dd47f1e6a5bba3f02499e976fb981a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual int- metoda wirtualna, referencja do obiektu klasy podrzędnej  <a href="classMeksykSocketInterface.html#a0dd47f1e6a5bba3f02499e976fb981a1">More...</a><br /></td></tr>
 <tr class="separator:a0dd47f1e6a5bba3f02499e976fb981a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9b64191f7a27962374dc1a67c0992c5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeksykSocketInterface.html#aa9b64191f7a27962374dc1a67c0992c5">neutral</a> ()=0</td></tr>
-<tr class="memdesc:aa9b64191f7a27962374dc1a67c0992c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual wraz z konstruktorem  <a href="classMeksykSocketInterface.html#aa9b64191f7a27962374dc1a67c0992c5">More...</a><br /></td></tr>
 <tr class="separator:aa9b64191f7a27962374dc1a67c0992c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa917cc8dfe1ae0c7e21f4357c364f0b4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMeksykSocketInterface.html#aa917cc8dfe1ae0c7e21f4357c364f0b4">earth</a> ()=0</td></tr>
-<tr class="memdesc:aa917cc8dfe1ae0c7e21f4357c364f0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual wraz z konstruktorem  <a href="classMeksykSocketInterface.html#aa917cc8dfe1ae0c7e21f4357c364f0b4">More...</a><br /></td></tr>
 <tr class="separator:aa917cc8dfe1ae0c7e21f4357c364f0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -122,7 +141,6 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>virtual wraz z konstruktorem </p>
 
 <p>Implemented in <a class="el" href="classAdapterMeksyk.html#afb627755f91af4a796e7dda67ff8120b">AdapterMeksyk</a>.</p>
@@ -151,8 +169,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>virtual int- metoda wirtualna, referencja do obiektu klasy podrzędnej </p>
+<p>virtual wraz z konstruktorem </p>
 
 <p>Implemented in <a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701">AdapterMeksyk</a>.</p>
 
@@ -180,7 +197,6 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>virtual wraz z konstruktorem </p>
 
 <p>Implemented in <a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf">AdapterMeksyk</a>.</p>
@@ -209,6 +225,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>virtual int - metoda wirtualna, referencja do obiektu klasy podrzędnej </p>
 
 <p>Implemented in <a class="el" href="classAdapterMeksyk.html#aefd5843336efbc35da58f4c5eada1ebd">AdapterMeksyk</a>.</p>
 
@@ -218,9 +235,13 @@ Public Member Functions</h2></td></tr>
 <li><a class="el" href="adapter_8cpp.html">adapter.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMeksykSocketInterface.html">MeksykSocketInterface</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

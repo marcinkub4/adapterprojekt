@@ -1,5 +1,5 @@
 <map id="AdapterMeksyk" name="AdapterMeksyk">
 <area shape="rect" id="node1" title="Klasa: Adapter Europa &#45;&gt; Meksyk koprzystająca z klasy: Docelowy Standard Meksyk." alt="" coords="128,95,252,121"/>
 <area shape="rect" id="node2" href="$classMeksykSocketInterface.html" title="Klasa: Gniazdo Meksyk (127V)" alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node3" href="$classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="205,5,373,32"/>
+<area shape="rect" id="node3" href="$classEuropaSocketInterface.html" title="Klasa: Gniazdo Europa." alt="" coords="205,5,373,32"/>
 </map>

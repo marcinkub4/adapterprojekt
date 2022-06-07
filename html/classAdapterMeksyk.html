@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classAdapterMeksyk.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -74,41 +94,41 @@ $(function() {
 
 <p>Klasa: Adapter Europa -&gt; Meksyk koprzystająca z klasy: Docelowy Standard Meksyk.  
  <a href="classAdapterMeksyk.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for AdapterMeksyk:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for AdapterMeksyk:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classAdapterMeksyk__inherit__graph.png" border="0" usemap="#aAdapterMeksyk_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAdapterMeksyk_inherit__map" id="aAdapterMeksyk_inherit__map">
 <area shape="rect" title="Klasa: Adapter Europa &#45;&gt; Meksyk koprzystająca z klasy: Docelowy Standard Meksyk." alt="" coords="31,80,155,107"/>
 <area shape="rect" href="classMeksykSocketInterface.html" title="Klasa: Gniazdo Meksyk (127V)" alt="" coords="5,5,180,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for AdapterMeksyk:</div>
-<div class="dyncontent">
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for AdapterMeksyk:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classAdapterMeksyk__coll__graph.png" border="0" usemap="#aAdapterMeksyk_coll__map" alt="Collaboration graph"/></div>
 <map name="aAdapterMeksyk_coll__map" id="aAdapterMeksyk_coll__map">
 <area shape="rect" title="Klasa: Adapter Europa &#45;&gt; Meksyk koprzystająca z klasy: Docelowy Standard Meksyk." alt="" coords="128,95,252,121"/>
 <area shape="rect" href="classMeksykSocketInterface.html" title="Klasa: Gniazdo Meksyk (127V)" alt="" coords="5,5,180,32"/>
-<area shape="rect" href="classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="205,5,373,32"/>
+<area shape="rect" href="classEuropaSocketInterface.html" title="Klasa: Gniazdo Europa." alt="" coords="205,5,373,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aec299df69c657192f34d5f62bf34e133"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdapterMeksyk.html#aec299df69c657192f34d5f62bf34e133">plugIn</a> (<a class="el" href="classEuropaSocketInterface.html">EuropaSocketInterface</a> *outlet)</td></tr>
-<tr class="memdesc:aec299df69c657192f34d5f62bf34e133"><td class="mdescLeft">&#160;</td><td class="mdescRight">wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa  <a href="classAdapterMeksyk.html#aec299df69c657192f34d5f62bf34e133">More...</a><br /></td></tr>
 <tr class="separator:aec299df69c657192f34d5f62bf34e133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefd5843336efbc35da58f4c5eada1ebd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdapterMeksyk.html#aefd5843336efbc35da58f4c5eada1ebd">voltage</a> ()</td></tr>
 <tr class="separator:aefd5843336efbc35da58f4c5eada1ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e4b572405992a2cda9a284ae0f66701"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701">live</a> ()</td></tr>
-<tr class="memdesc:a3e4b572405992a2cda9a284ae0f66701"><td class="mdescLeft">&#160;</td><td class="mdescRight">zmienna voltage, która zwraca nam wartość 127  <a href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701">More...</a><br /></td></tr>
 <tr class="separator:a3e4b572405992a2cda9a284ae0f66701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c4bb79a2d7f4926ce0b50309d0aaacf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf">neutral</a> ()</td></tr>
-<tr class="memdesc:a0c4bb79a2d7f4926ce0b50309d0aaacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cable <a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701" title="zmienna voltage, która zwraca nam wartość 127">live()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701" title="zmienna voltage, która zwraca nam wartość 127">live()</a> z klasy: Gniazdo Europa na wartość 1.  <a href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf">More...</a><br /></td></tr>
 <tr class="separator:a0c4bb79a2d7f4926ce0b50309d0aaacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb627755f91af4a796e7dda67ff8120b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdapterMeksyk.html#afb627755f91af4a796e7dda67ff8120b">earth</a> ()</td></tr>
-<tr class="memdesc:afb627755f91af4a796e7dda67ff8120b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cable <a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf" title="Cable live() klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;live() z klasy: Gniazdo Europa n...">neutral()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf" title="Cable live() klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;live() z klasy: Gniazdo Europa n...">neutral()</a> z klasy: Gniazdo Europa na wartość -1.  <a href="classAdapterMeksyk.html#afb627755f91af4a796e7dda67ff8120b">More...</a><br /></td></tr>
 <tr class="separator:afb627755f91af4a796e7dda67ff8120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -141,8 +161,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Cable <a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf" title="Cable live() klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;live() z klasy: Gniazdo Europa n...">neutral()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf" title="Cable live() klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;live() z klasy: Gniazdo Europa n...">neutral()</a> z klasy: Gniazdo Europa na wartość -1. </p>
+<p>Cable <a class="el" href="classAdapterMeksyk.html#afb627755f91af4a796e7dda67ff8120b">earth()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#afb627755f91af4a796e7dda67ff8120b">earth()</a> z klasy: Gniazdo Europa na wartość 0 </p>
 
 <p>Implements <a class="el" href="classMeksykSocketInterface.html#aa917cc8dfe1ae0c7e21f4357c364f0b4">MeksykSocketInterface</a>.</p>
 
@@ -170,8 +189,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>zmienna voltage, która zwraca nam wartość 127 </p>
+<p>Cable <a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701">live()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701">live()</a> z klasy: Gniazdo Europa na wartość 1 </p>
 
 <p>Implements <a class="el" href="classMeksykSocketInterface.html#a0dd47f1e6a5bba3f02499e976fb981a1">MeksykSocketInterface</a>.</p>
 
@@ -199,8 +217,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Cable <a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701" title="zmienna voltage, która zwraca nam wartość 127">live()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a3e4b572405992a2cda9a284ae0f66701" title="zmienna voltage, która zwraca nam wartość 127">live()</a> z klasy: Gniazdo Europa na wartość 1. </p>
+<p>Cable <a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf">neutral()</a> klasy: Adapter Europa -&gt; Meksyk zwraca wskaźnik socket-&gt;<a class="el" href="classAdapterMeksyk.html#a0c4bb79a2d7f4926ce0b50309d0aaacf">neutral()</a> z klasy: Gniazdo Europa na wartość -1 </p>
 
 <p>Implements <a class="el" href="classMeksykSocketInterface.html#aa9b64191f7a27962374dc1a67c0992c5">MeksykSocketInterface</a>.</p>
 
@@ -229,10 +246,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa </p>
-<p>funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet </p>
 <p>wskaźnik socket równa się wskaźnikowi outlet</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outlet</td><td>funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -258,6 +278,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>zmienna voltage, która zwraca nam wartość 127 </p>
 
 <p>Implements <a class="el" href="classMeksykSocketInterface.html#a7971cc8d57adfccdc72f391322e463d7">MeksykSocketInterface</a>.</p>
 
@@ -283,6 +304,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa </p>
 
 </div>
 </div>
@@ -290,9 +312,13 @@ Private Attributes</h2></td></tr>
 <li><a class="el" href="adapter_8cpp.html">adapter.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classAdapterMeksyk.html">AdapterMeksyk</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

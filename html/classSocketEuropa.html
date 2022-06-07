@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classSocketEuropa.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +82,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -71,43 +91,44 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa*&zwj;/.  
+<p>Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa.  
  <a href="classSocketEuropa.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SocketEuropa:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SocketEuropa:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classSocketEuropa__inherit__graph.png" border="0" usemap="#aSocketEuropa_inherit__map" alt="Inheritance graph"/></div>
 <map name="aSocketEuropa_inherit__map" id="aSocketEuropa_inherit__map">
-<area shape="rect" title="Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa*‍/." alt="" coords="34,80,145,107"/>
-<area shape="rect" href="classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="5,5,173,32"/>
+<area shape="rect" title="Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa." alt="" coords="34,80,145,107"/>
+<area shape="rect" href="classEuropaSocketInterface.html" title="Klasa: Gniazdo Europa." alt="" coords="5,5,173,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for SocketEuropa:</div>
-<div class="dyncontent">
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for SocketEuropa:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classSocketEuropa__coll__graph.png" border="0" usemap="#aSocketEuropa_coll__map" alt="Collaboration graph"/></div>
 <map name="aSocketEuropa_coll__map" id="aSocketEuropa_coll__map">
-<area shape="rect" title="Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa*‍/." alt="" coords="34,80,145,107"/>
-<area shape="rect" href="classEuropaSocketInterface.html" title="konstruktor dla przyszłych klas" alt="" coords="5,5,173,32"/>
+<area shape="rect" title="Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa." alt="" coords="34,80,145,107"/>
+<area shape="rect" href="classEuropaSocketInterface.html" title="Klasa: Gniazdo Europa." alt="" coords="5,5,173,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a36e35348a59d5de7df2a96d71fa02b0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocketEuropa.html#a36e35348a59d5de7df2a96d71fa02b0b">voltage</a> ()</td></tr>
 <tr class="separator:a36e35348a59d5de7df2a96d71fa02b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0985c71b7545202ef852664ba45e8c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocketEuropa.html#a0985c71b7545202ef852664ba45e8c7a">live</a> ()</td></tr>
-<tr class="memdesc:a0985c71b7545202ef852664ba45e8c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual int- metoda wirtualna, referencja do obiektu klasy głównej, zmiana wartości z 0 na 230  <a href="classSocketEuropa.html#a0985c71b7545202ef852664ba45e8c7a">More...</a><br /></td></tr>
 <tr class="separator:a0985c71b7545202ef852664ba45e8c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abff91c3d63c785d933b93f7074c9bb5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocketEuropa.html#abff91c3d63c785d933b93f7074c9bb5e">neutral</a> ()</td></tr>
-<tr class="memdesc:abff91c3d63c785d933b93f7074c9bb5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">zmiana wartości z 0 na 1  <a href="classSocketEuropa.html#abff91c3d63c785d933b93f7074c9bb5e">More...</a><br /></td></tr>
 <tr class="separator:abff91c3d63c785d933b93f7074c9bb5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fa3712b1fb2b9ed5d725bc354f959f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="adapter_8cpp.html#aaaae0ed7582110f33c9633f1141f216f">Cable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSocketEuropa.html#a65fa3712b1fb2b9ed5d725bc354f959f">earth</a> ()</td></tr>
-<tr class="memdesc:a65fa3712b1fb2b9ed5d725bc354f959f"><td class="mdescLeft">&#160;</td><td class="mdescRight">zmiana wartości z 0 na -1  <a href="classSocketEuropa.html#a65fa3712b1fb2b9ed5d725bc354f959f">More...</a><br /></td></tr>
 <tr class="separator:a65fa3712b1fb2b9ed5d725bc354f959f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa*&zwj;/. </p>
+<div class="textblock"><p>Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a65fa3712b1fb2b9ed5d725bc354f959f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65fa3712b1fb2b9ed5d725bc354f959f">&#9670;&nbsp;</a></span>earth()</h2>
@@ -131,8 +152,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>zmiana wartości z 0 na -1 </p>
+<p>zmiana wartości z 0 na 0 </p>
 
 <p>Implements <a class="el" href="classEuropaSocketInterface.html#aa73d6694b404ff92e3aa3c1b706052d0">EuropaSocketInterface</a>.</p>
 
@@ -160,8 +180,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>virtual int- metoda wirtualna, referencja do obiektu klasy głównej, zmiana wartości z 0 na 230 </p>
+<p>zmiana wartości z 0 na 1 </p>
 
 <p>Implements <a class="el" href="classEuropaSocketInterface.html#ab0267744f9281049c11c9a444c22fde0">EuropaSocketInterface</a>.</p>
 
@@ -189,8 +208,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>zmiana wartości z 0 na 1 </p>
+<p>zmiana wartości z 0 na -1 </p>
 
 <p>Implements <a class="el" href="classEuropaSocketInterface.html#aafc7206ecad13b01f12aa564693f6a4b">EuropaSocketInterface</a>.</p>
 
@@ -218,6 +236,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>virtual int - metoda wirtualna, referencja do obiektu klasy głównej, zmiana wartości z 0 na 230 </p>
 
 <p>Implements <a class="el" href="classEuropaSocketInterface.html#a90d9f39ca0f3a204dda8896f084e8b47">EuropaSocketInterface</a>.</p>
 
@@ -227,9 +246,13 @@ Public Member Functions</h2></td></tr>
 <li><a class="el" href="adapter_8cpp.html">adapter.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classSocketEuropa.html">SocketEuropa</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
