@@ -6,168 +6,167 @@
 
 using namespace std; // Za pomoca slow kluczowych using namespace informujemy kompilator, ze chcemy aby wszystkie funkcje, klasy i szablony nalezace do przestrzeni nazw nie wymagaly przedrostka. Wyraz wystepujacy po tych dwoch slowach kluczowych jest istniejaca nazwa przestrzeni. Dla standardowych bibliotek C++ jest to std.
 
-typedef int Cable; /// konstruktor dla przyszłych klas
+typedef int Cable; /**< konstruktor dla przyszłych klas */
 
-
-class EuropaSocketInterface /// Klasa: GniazdoEuropa 
+class EuropaSocketInterface /// Klasa: Gniazdo Europa 
 {
 public:
-    virtual int voltage() = 0; /// virtual int- metoda wirtualna
+    virtual int voltage() = 0; /**< virtual int - metoda wirtualna */
 
-    virtual Cable live() = 0;  /// virtual wraz z konstruktorem
-    virtual Cable neutral() = 0; /// virtual wraz z konstruktorem
-    virtual Cable earth() = 0; /// virtual wraz z konstruktorem
+    virtual Cable live() = 0;  /**< virtual wraz z konstruktorem */
+    virtual Cable neutral() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable earth() = 0; /**< virtual wraz z konstruktorem */
 };
 
 
 class USASocketInterface /// Klasa: Gniazdo USA (120V) 
 {
 public:
-    virtual int voltage() = 0; /// virtual int- metoda wirtualna
+    virtual int voltage() = 0; /**< virtual int - metoda wirtualna */
     
-    virtual Cable live() = 0; /// virtual wraz z konstruktorem
-    virtual Cable neutral() = 0; /// virtual wraz z konstruktorem
-    virtual Cable earth() = 0; /// virtual wraz z konstruktorem
+    virtual Cable live() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable neutral() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable earth() = 0; /**< virtual wraz z konstruktorem */
 };
 
 
 class MeksykSocketInterface /// Klasa: Gniazdo Meksyk (127V) 
 {
 public:
-    virtual int voltage() = 0; /// virtual int- metoda wirtualna, referencja do obiektu klasy podrzędnej
+    virtual int voltage() = 0; /**< virtual int - metoda wirtualna, referencja do obiektu klasy podrzędnej */
     
-    virtual Cable live() = 0; /// virtual wraz z konstruktorem
-    virtual Cable neutral() = 0; /// virtual wraz z konstruktorem
-    virtual Cable earth() = 0; /// virtual wraz z konstruktorem
+    virtual Cable live() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable neutral() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable earth() = 0; /**< virtual wraz z konstruktorem */
 };
 
 
 class KoreaPldSocketInterface /// Klasa: Gniazdo Korea Poludniowa (220V) 
 {
 public:
-    virtual int voltage() = 0; /// virtual int- metoda wirtualna, referencja do obiektu klasy podrzędnej
+    virtual int voltage() = 0; /**< virtual int - metoda wirtualna, referencja do obiektu klasy podrzędnej */
     
-    virtual Cable live() = 0; /// virtual wraz z konstruktorem
-    virtual Cable neutral() = 0; /// virtual wraz z konstruktorem
-    virtual Cable earth() = 0; /// virtual wraz z konstruktorem
+    virtual Cable live() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable neutral() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable earth() = 0; /**< virtual wraz z konstruktorem */
 };
 
 
 class TaiwanSocketInterface /// Klasa: Gniazdo Taiwan (110V) 
 {
 public:
-    virtual int voltage() = 0; /// virtual int- metoda wirtualna, referencja do obiektu klasy podrzędnej
+    virtual int voltage() = 0; /**< virtual int - metoda wirtualna, referencja do obiektu klasy podrzędnej */
     
-    virtual Cable live() = 0; /// virtual wraz z konstruktorem
-    virtual Cable neutral() = 0; /// virtual wraz z konstruktorem
-    virtual Cable earth() = 0; /// virtual wraz z konstruktorem
+    virtual Cable live() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable neutral() = 0; /**< virtual wraz z konstruktorem */
+    virtual Cable earth() = 0; /**< virtual wraz z konstruktorem */
 };
 
 
-class SocketEuropa : public EuropaSocketInterface /// Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa*/
+class SocketEuropa : public EuropaSocketInterface /// Klasa: Główne wejscie Europa korzystająca z Klasy: GniazdoEuropa 
 {
 public:
-    int voltage() { return 230; } /// virtual int- metoda wirtualna, referencja do obiektu klasy głównej, zmiana wartości z 0 na 230
+    int voltage() { return 230; } /**< virtual int - metoda wirtualna, referencja do obiektu klasy głównej, zmiana wartości z 0 na 230 */
     
-    Cable live() { return 1; } /// zmiana wartości z 0 na 1
-    Cable neutral() { return -1; } /// zmiana wartości z 0 na -1
-    Cable earth() { return 0; } /// zmiana wartości z 0 na 0
+    Cable live() { return 1; } /**< zmiana wartości z 0 na 1 */
+    Cable neutral() { return -1; } /**< zmiana wartości z 0 na -1 */
+    Cable earth() { return 0; } /**< zmiana wartości z 0 na 0 */
 };
 
 
 class AdapterUSA : public USASocketInterface /// Klasa: Adapter Europa -> USA koprzystająca z klasy: Docelowy Standard USA 
 {
-    EuropaSocketInterface* socket; /// wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa
+    EuropaSocketInterface* socket; /**< wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa */
 
 public:
-    void plugIn(EuropaSocketInterface* outlet) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet
-    {
-        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet
+    void plugIn(EuropaSocketInterface* outlet) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet */
+    { 
+        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet 
     }
 
-    int voltage() { return 120; } /// zmienna voltage, która zwraca nam wartość 120
+    int voltage() { return 120; } /**< zmienna voltage, która zwraca nam wartość 120 */
     
-    Cable live() { return socket->live(); } /// Cable live() klasy: Adapter Europa -> USA zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1
-    Cable neutral() { return socket->neutral(); } /// Cable neutral() klasy: Adapter Europa -> USA zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1
-    Cable earth() { return socket->earth(); } /// Cable earth() klasy: Adapter Europa -> USA zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0
+    Cable live() { return socket->live(); } /**< Cable live() klasy: Adapter Europa -> USA zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1 */
+    Cable neutral() { return socket->neutral(); } /**< Cable neutral() klasy: Adapter Europa -> USA zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1 */
+    Cable earth() { return socket->earth(); } /**< Cable earth() klasy: Adapter Europa -> USA zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0 */
 };
 
 
-class AdapterMeksyk : public MeksykSocketInterface /// Klasa: Adapter Europa -> Meksyk koprzystająca z klasy: Docelowy Standard Meksyk 
+class AdapterMeksyk : public MeksykSocketInterface /// Klasa: Adapter Europa -> Meksyk koprzystająca z klasy: Docelowy Standard Meksyk
 {
-    EuropaSocketInterface* socket; /// wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa
+    EuropaSocketInterface* socket; /**< wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa */
 
 public:
-    void plugIn(EuropaSocketInterface* outlet) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet
+    void plugIn(EuropaSocketInterface* outlet) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet */
     {
-        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet
+        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet 
     }
 
-    int voltage() { return 127; } /// zmienna voltage, która zwraca nam wartość 127
+    int voltage() { return 127; } /**< zmienna voltage, która zwraca nam wartość 127 */
     
-    Cable live() { return socket->live(); } /// Cable live() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1
-    Cable neutral() { return socket->neutral(); } /// Cable neutral() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1
-    Cable earth() { return socket->earth(); } /// Cable earth() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0
+    Cable live() { return socket->live(); } /**< Cable live() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1 */
+    Cable neutral() { return socket->neutral(); } /**< Cable neutral() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1 */
+    Cable earth() { return socket->earth(); } /**< Cable earth() klasy: Adapter Europa -> Meksyk zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0 */
 };
 
 
 class AdapterKoreaPld : public KoreaPldSocketInterface /// Klasa: Adapter Europa -> KoreaPld koprzystająca z klasy: Docelowy Standard KoreaPld 
 {
-    EuropaSocketInterface* socket; /// wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa
+    EuropaSocketInterface* socket; /**< wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa */
 
 public:
-    void plugIn(EuropaSocketInterface* outlet) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet
+    void plugIn(EuropaSocketInterface* outlet) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet */
     {
-        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet
+        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet 
     }
 
-    int voltage() { return 220; } /// zmienna voltage, która zwraca nam wartość 220
+    int voltage() { return 220; } /**< zmienna voltage, która zwraca nam wartość 220 */
     
-    Cable live() { return socket->live(); } /// Cable live() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1
-    Cable neutral() { return socket->neutral(); } /// Cable neutral() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1
-    Cable earth() { return socket->earth(); } /// Cable earth() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0
+    Cable live() { return socket->live(); } /**< Cable live() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1 */
+    Cable neutral() { return socket->neutral(); } /**< Cable neutral() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1 */
+    Cable earth() { return socket->earth(); } /**< Cable earth() klasy: Adapter Europa -> KoreaPld zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0 */
 };
 
 
 class AdapterTaiwan : public TaiwanSocketInterface /// Klasa: Adapter Europa -> Taiwan koprzystająca z klasy: Docelowy Standard Taiwan 
 {
-    EuropaSocketInterface* socket; /// wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa
+    EuropaSocketInterface* socket; /**< wskaźnik socket do obiektu klasy podstawowej: Gniazdo Europa */
 
 public:
-    void plugIn(EuropaSocketInterface* outlet) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet
+    void plugIn(EuropaSocketInterface* outlet) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Europa i wskaźnikiem outlet */
     {
-        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet
+        socket = outlet; /// wskaźnik socket równa się wskaźnikowi outlet 
     }
 
-    int voltage() { return 110; } /// zmienna voltage, która zwraca nam wartość 110
+    int voltage() { return 110; } /**< zmienna voltage, która zwraca nam wartość 110 */
     
-    Cable live() { return socket->live(); } /// Cable live() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1
-    Cable neutral() { return socket->neutral(); } /// Cable neutral() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1
-    Cable earth() { return socket->earth(); } /// Cable earth() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0
+    Cable live() { return socket->live(); } /**< Cable live() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->live() z klasy: Gniazdo Europa na wartość 1 */
+    Cable neutral() { return socket->neutral(); } /**< Cable neutral() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->neutral() z klasy: Gniazdo Europa na wartość -1 */
+    Cable earth() { return socket->earth(); } /**< Cable earth() klasy: Adapter Europa -> Taiwan zwraca wskaźnik socket->earth() z klasy: Gniazdo Europa na wartość 0 */
 };
 
 
 class ElectricDeviceUSA /// Klasa: Urządzenie USA 
 {
-    USASocketInterface* power; /// wskaźnik do obiektu klasy podstawowej: Gniazdo USA
+    USASocketInterface* power; /**< wskaźnik do obiektu klasy podstawowej: Gniazdo USA */
 
 public:
-    void plugIn(USASocketInterface* supply) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo USA i wskaźnikiem supply
+    void plugIn(USASocketInterface* supply) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo USA i wskaźnikiem supply */
     {
-        power = supply; /// wskaźnik power równa się wskaźnikowi supply
+        power = supply; /// wskaźnik power równa się wskaźnikowi supply 
     }
 
-    void deviceUSA()  /// funkcja void urządzenia
+    void deviceUSA()  /**< funkcja void urządzenia */
     {
-        if (power->voltage() > 120) /// instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 120 wyświetli komunikat za pomocą cout
+        if (power->voltage() > 120) /**< instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 120 wyświetli komunikat za pomocą cout */
         {
-            cout << "Zle napiecie!" << endl; /// wyświetlenie nieprawidłowego napięcia
+            cout << "Zle napiecie!" << endl; /**< wyświetlenie nieprawidłowego napięcia */
             return;
         }
 
-        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /// instrukcja if - wskaźniki na zgodność z wartościami
+        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /**< instrukcja if - wskaźniki na zgodność z wartościami */
         {
-            cout << "Podlaczono pomyslnie." << endl; /// wyświetlenie poprawnego podłączenia
+            cout << "Podlaczono pomyslnie." << endl; /**< wyświetlenie poprawnego podłączenia */
         }
     }
 };
@@ -175,25 +174,25 @@ public:
 
 class ElectricDeviceMeksyk /// Klasa: Urządzenie Meksyk 
 {
-    MeksykSocketInterface* power; /// wskaźnik do obiektu klasy podstawowej: Gniazdo Meksyk
+    MeksykSocketInterface* power; /**< wskaźnik do obiektu klasy podstawowej: Gniazdo Meksyk */
 
 public:
-    void plugIn(MeksykSocketInterface* supply) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Meksyk i wskaźnikiem supply
+    void plugIn(MeksykSocketInterface* supply) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Meksyk i wskaźnikiem supply */
     {
-        power = supply; /// wskaźnik power równa się wskaźnikowi supply
+        power = supply; /// wskaźnik power równa się wskaźnikowi supply 
     }
 
-    void deviceMeksyk() /// funkcja void urządzenia
+    void deviceMeksyk() /**< funkcja void urządzenia */
     {
-        if (power->voltage() > 127) /// instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 127 wyświetli komunikat za pomocą cout
+        if (power->voltage() > 127) /**< instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 127 wyświetli komunikat za pomocą cout */
         {
-            cout << "Zle napiecie!" << endl; /// wyświetlenie nieprawidłowego napięcia
+            cout << "Zle napiecie!" << endl; /**< wyświetlenie nieprawidłowego napięcia */
             return;
         }
 
-        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /// instrukcja if - wskaźniki na zgodność z wartościami
+        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /**< instrukcja if - wskaźniki na zgodność z wartościami */
         {
-            cout << "Podlaczono pomyslnie." << endl; /// wyświetlenie poprawnego podłączenia
+            cout << "Podlaczono pomyslnie." << endl; /**< wyświetlenie poprawnego podłączenia */
         }
     }
 };
@@ -201,25 +200,25 @@ public:
 
 class ElectricDeviceKoreaPld /// Klasa: Urządzenie KoreaPld 
 {
-    KoreaPldSocketInterface* power; /// wskaźnik do obiektu klasy podstawowej: Gniazdo Korea
+    KoreaPldSocketInterface* power; /**< wskaźnik do obiektu klasy podstawowej: Gniazdo Korea */
 
 public:
-    void plugIn(KoreaPldSocketInterface* supply) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo KoreaPld i wskaźnikiem supply
+    void plugIn(KoreaPldSocketInterface* supply) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo KoreaPld i wskaźnikiem supply */
     {
-        power = supply; /// wskaźnik power równa się wskaźnikowi supply
+        power = supply; /// wskaźnik power równa się wskaźnikowi supply 
     }
 
-    void deviceKorea() /// funkcja void urządzenia
+    void deviceKorea() /**< funkcja void urządzenia */
     {
-        if (power->voltage() > 220) /// instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 220 wyświetli komunikat za pomocą cout
+        if (power->voltage() > 220) /**< instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 220 wyświetli komunikat za pomocą cout */
         {
-            cout << "Zle napiecie!" << endl; /// wyświetlenie nieprawidłowego napięcia
+            cout << "Zle napiecie!" << endl; /**< wyświetlenie nieprawidłowego napięcia */
             return;
         }
 
-        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /// instrukcja if - wskaźniki na zgodność z wartościami
+        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /**< instrukcja if - wskaźniki na zgodność z wartościami */
         {
-            cout << "Podlaczono pomyslnie." << endl; /// wyświetlenie poprawnego podłączenia
+            cout << "Podlaczono pomyslnie." << endl; /**< wyświetlenie poprawnego podłączenia */
         }
     }
 };
@@ -227,156 +226,170 @@ public:
 
 class ElectricDeviceTaiwan /// Klasa: Urządzenie Taiwan 
 {
-    TaiwanSocketInterface* power; /// wskaźnik do obiektu klasy podstawowej: Gniazdo Taiwan
+    TaiwanSocketInterface* power; /**< wskaźnik do obiektu klasy podstawowej: Gniazdo Taiwan */
 
 public:
-    void plugIn(TaiwanSocketInterface* supply) /// funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Taiwan i wskaźnikiem supply
+    void plugIn(TaiwanSocketInterface* supply) /**< funkcja void plugIn nie zwracająca żadnych danych wraz z odniesieniem do klasy: Gniazdo Taiwan i wskaźnikiem supply */
     {
-        power = supply; /// wskaźnik power równa się wskaźnikowi supply
+        power = supply; /// wskaźnik power równa się wskaźnikowi supply 
     }
 
-    void deviceTaiwan() /// funkcja void urządzenia
+    void deviceTaiwan() /**< funkcja void urządzenia */
     {
-        if (power->voltage() > 110) /// instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 110 wyświetli komunikat za pomocą cout
+        if (power->voltage() > 110) /**< instrukcja if mocy odwołująca się do napięcia; jeżeli napięcie jest większe od 110 wyświetli komunikat za pomocą cout */
         {
-            cout << "Zle napiecie!" << endl; /// wyświetlenie nieprawidłowego napięcia
+            cout << "Zle napiecie!" << endl; /**< wyświetlenie nieprawidłowego napięcia */
             return;
         }
 
-        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /// instrukcja if - wskaźniki na zgodność z wartościami
+        if (power->live() == 1 && power->neutral() == -1 && power->earth() == 0) /**< instrukcja if - wskaźniki na zgodność z wartościami */
         {
-            cout << "Podlaczono pomyslnie." << endl; /// wyświetlenie poprawnego podłączenia
+            cout << "Podlaczono pomyslnie." << endl; /**< wyświetlenie poprawnego podłączenia */
         }
     }
 };
 
 
-void menu() /// Menu programu Adapter 
+///////////////////////////////////////////////////////////////
+/// Menu programu Adapter posiada 5 opcji do wyboru adapteru,
+/// wcześniej komenda clear czyści terminal w systemie Linux.
+/// Na koniec prosi użytkownika o wybranie opcji od 1 do 5.
+void menu()
 {
-    system("clear"); /// komenda clear czyści terminal w Linuxie
+    system("clear"); 
 
     cout << "======================\n";
-    cout << "== Adaptery do wyboru: ==\n"; /// Naglówek z wyborem adapterów
+    cout << "== Adaptery do wyboru: ==\n"; 
     cout << "======================\n";
     cout << " \n";
-    cout << "1) Europa - USA\n"; /// opcja nr 1
-    cout << "2) Europa - Meksyk\n"; /// opcja nr 2
-    cout << "3) Europa - Korea Południowa\n"; /// opcja nr 3
-    cout << "4) Europa - Taiwan\n"; /// opcja nr 4
-    cout << "5) Wyjdz z programu\n"; /// opcja nr 5
+    cout << "1) Europa - USA\n"; 
+    cout << "2) Europa - Meksyk\n";
+    cout << "3) Europa - Korea Południowa\n"; 
+    cout << "4) Europa - Taiwan\n"; 
+    cout << "5) Wyjdz z programu\n"; 
     cout << " \n";
-    cout << "Wybierz numer dla konkretnego adapteru:    (1-5) \n"; /// informacja wyboru
+    cout << "Wybierz numer dla konkretnego adapteru:    (1-5) \n";
 }
 
-int main() /// Główna funkcja programu Adapter 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Główna funkcja programu Adapter. Na początku definiujemy zmienną 'opcja', która w kolejnych krokach umożliwi nam wybór interesującego nas adaptera.
+/// Definiujemy boolean 'running' który połączony jest z pętlą while - dopóki wartość będzie 'true' to będzie wykonywać naszą pętlę.
+/// Przywołujemy menu główne z funkcji void menu(), użytkownik wpisuje cyfrę od 1 do 5. Wybór odpowiedniej cyfry wywołuje konkretny warunek (case) w instrukcji switch.
+///
+/// W zależności od wybranej opcji, zmienia nam parametry adaptera końcowego, a następnie wyświetla nam jaki typ adaptera wybraliśmy. 
+///
+/// Opcje od 1 do 4 wybierają nam rodzaj adapteru, natomiast opcja 5 wychodzi nam z programu.
+int main() 
 {
-    char opcja; /// zmienna inicjowana aby wybrać konkretną opcję od 1 do 5
-    bool running = true; /// boolean 'running' wartością 'true'
+    char opcja;
+    bool running = true; 
+    
+    system("clear");
 
-    system("clear"); /// komenda clear czyści terminal w Linuxie
-
-    while (running) /// pętla while z booleanem 'running' = true, będzie zawsze powracać do menu glównego po wykonaniu przypadku
+    while (running)
     {
-        menu(); /// inicjujemy menu
-        cin >> opcja; /// komenda cin do wpisania opcji przez użytkownika
+        menu(); 
+        cin >> opcja; 
 
-        switch (opcja) /// opcja wykonuje dany przypadek
+        switch (opcja) 
         {
-            case '1': /// opcja nr 1 wykonująca operację
+            case '1':
             { 
-                system("clear"); /// komenda clear czyści terminal w Linuxie
+                system("clear"); 
 
-                cout << "Adapter USA 120 V" << endl; /// Wyświetlenie komunikatu jaki to konkretnie adapter
+                cout << "Adapter USA 120 V" << endl;
 
-                SocketEuropa* socket = new SocketEuropa; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Gniazdo Europa ze wskaźnikiem 'socket' tworzy nową lokalizację
-                AdapterUSA* adapter = new AdapterUSA; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Adapter USA ze wskaźnikiem 'adapter' tworzy nową lokalizację
-                ElectricDeviceUSA* device = new ElectricDeviceUSA; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Urządzenie USA ze wskaźnikiem 'device' tworzy nową lokalizację
+                SocketEuropa* socket = new SocketEuropa;
+                AdapterUSA* adapter = new AdapterUSA; 
+                ElectricDeviceUSA* device = new ElectricDeviceUSA; 
 
-                adapter->plugIn(socket); /// adapter wskaźnikiem do plugIn(socket)
-                device->plugIn(adapter);  /// device wskaźnikiem do plugIn(adapter)
+                adapter->plugIn(socket);
+                device->plugIn(adapter); 
 
-                device->deviceUSA(); /// odniesienie do funkcji void deviceUSA
+                device->deviceUSA(); 
 
                 cout << "\n";
 
-		sleep(5); /// uśpienie programu na 5 sekund następnie powrót do menu głównego
+		sleep(5); 
 		
                 break;
             }
 
-            case '2': /// opcja nr 2 wykonująca operację
+            case '2': 
             {
-                system("clear"); /// komenda clear czyści terminal w Linuxie
+                system("clear");
 
-                cout << "Adapter Meksyk 127 V" << endl; /// Wyświetlenie komunikatu jaki to konkretnie adapter
+                cout << "Adapter Meksyk 127 V" << endl; 
 
-                SocketEuropa* socket = new SocketEuropa; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Gniazdo Europa ze wskaźnikiem 'socket' tworzy nową lokalizację
-                AdapterMeksyk* adapter = new AdapterMeksyk; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Adapter Meksyk ze wskaźnikiem 'adapter' tworzy nową lokalizację
-                ElectricDeviceMeksyk* device = new ElectricDeviceMeksyk; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Urządzenie Meksyk ze wskaźnikiem 'device' tworzy nową lokalizację
+                SocketEuropa* socket = new SocketEuropa; 
+                AdapterMeksyk* adapter = new AdapterMeksyk; 
+                ElectricDeviceMeksyk* device = new ElectricDeviceMeksyk; 
 
-                adapter->plugIn(socket); /// adapter wskaźnikiem do plugIn(socket)
-                device->plugIn(adapter); /// device wskaźnikiem do plugIn(adapter)
+                adapter->plugIn(socket); 
+                device->plugIn(adapter); 
 
-                device->deviceMeksyk(); /// odniesienie do funkcji void deviceMeksyk
+                device->deviceMeksyk(); 
 
                 cout << "\n";
 
-		sleep(5); /// uśpienie programu na 5 sekund następnie powrót do menu głównego
+		sleep(5); 
 		
                 break;
             }
 
-            case '3': /// opcja nr 3 wykonująca operację
+            case '3': 
             {
-                system("clear"); /// komenda clear czyści terminal w Linuxie
+                system("clear"); 
 
-                cout << "Adapter Korea Poludniowa 220 V:\n" << endl; /// Wyświetlenie komunikatu jaki to konkretnie adapter
+                cout << "Adapter Korea Poludniowa 220 V:\n" << endl; 
 
-                SocketEuropa* socket = new SocketEuropa; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Gniazdo Europa ze wskaźnikiem 'socket' tworzy nową lokalizację
-                AdapterKoreaPld* adapter = new AdapterKoreaPld; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Adapter KoreaPld ze wskaźnikiem 'adapter' tworzy nową lokalizację
-                ElectricDeviceKoreaPld* device = new ElectricDeviceKoreaPld; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Urządzenie KoreaPld ze wskaźnikiem 'device' tworzy nową lokalizację
+                SocketEuropa* socket = new SocketEuropa; 
+                AdapterKoreaPld* adapter = new AdapterKoreaPld; 
+                ElectricDeviceKoreaPld* device = new ElectricDeviceKoreaPld; 
 
-                adapter->plugIn(socket); /// adapter wskaźnikiem do plugIn(socket)
-                device->plugIn(adapter); /// device wskaźnikiem do plugIn(adapter)
+                adapter->plugIn(socket); 
+                device->plugIn(adapter); 
 
-                device->deviceKorea(); /// odniesienie do funkcji void deviceKorea
+                device->deviceKorea(); 
 
                 cout << "\n";
 
-		sleep(5); /// uśpienie programu na 5 sekund następnie powrót do menu głównego
+		sleep(5); 
 
                 break;
             }
  
-            case '4': /// opcja nr 4 wykonująca operację
+            case '4': 
             {
-                system("clear"); /// komenda clear czyści terminal w Linuxie
+                system("clear"); 
 
-                cout << "Adapter Taiwan 110 V:\n" << endl; /// Wyświetlenie komunikatu jaki to konkretnie adapter
+                cout << "Adapter Taiwan 110 V:\n" << endl; 
 
-                SocketEuropa* socket = new SocketEuropa; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Gniazdo Europa ze wskaźnikiem 'socket' tworzy nową lokalizację
-                AdapterTaiwan* adapter = new AdapterTaiwan; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Adapter Taiwan ze wskaźnikiem 'adapter' tworzy nową lokalizację
-                ElectricDeviceTaiwan* device = new ElectricDeviceTaiwan; /// 'new' - zwraca adres lokalizacji pamięci, której możemy od teraz używać do przechowywania wartości jakiegoś typu. Klasa Urządzenie Taiwan ze wskaźnikiem 'device' tworzy nową lokalizację
+                SocketEuropa* socket = new SocketEuropa; 
+                AdapterTaiwan* adapter = new AdapterTaiwan; 
+                ElectricDeviceTaiwan* device = new ElectricDeviceTaiwan;
 
-                adapter->plugIn(socket); /// adapter wskaźnikiem do plugIn(socket)
-                device->plugIn(adapter); /// device wskaźnikiem do plugIn(adapter)
+                adapter->plugIn(socket); 
+                device->plugIn(adapter);
 
-                device->deviceTaiwan(); /// odniesienie do funkcji void deviceTaiwan
+                device->deviceTaiwan();
 
                 cout << "\n";
 
-		sleep(5); /// uśpienie programu na 5 sekund następnie powrót do menu głównego
+		sleep(5); 
 		
                 break;
             }
 
-            case '5': /// opcja nr 5 wykonująca operację
+            case '5': 
             {
-                return EXIT_SUCCESS; /// zamknięcie programu
+                return EXIT_SUCCESS; 
             }
         }
     }
 
-    system("clear"); /// komenda clear czyści terminal w Linuxie
+    system("clear"); 
 }
 
